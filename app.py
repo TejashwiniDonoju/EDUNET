@@ -51,6 +51,24 @@ X_scaled = scaler.fit_transform(X)
 kmeans = KMeans(n_clusters=4, random_state=42, n_init=10)  
 df_pivot_filled["Cluster"] = kmeans.fit_predict(X_scaled)
 
+
+st.sidebar.header("Controls")
+
+n_clusters = st.sidebar.slider("Select number of clusters", min_value=2, max_value=10, value=4)
+
+kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
+df_pivot_filled["Cluster"] = kmeans.fit_predict(X_scaled)
+
+selected_country = st.sidebar.selectbox("Select a country:", df_pivot_filled["Country name"].unique())
+
+country_cluster = df_pivot_filled[df_pivot_filled["Country name"] == selected_country][["Country name", "Cluster"]]
+st.write("### Cluster for selected country")
+st.dataframe(country_cluster)
+
+
+
+
+
 print(df_pivot_filled[["Country name", "Cluster"]].head(10))
 
 
