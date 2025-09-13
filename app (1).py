@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 
 # Read dataset from GitHub
-url = "/content/sample_data/Projected annual temperature change (2045-2065 Celsius) - Data.csv"
+url = "https://drive.google.com/uc?export=download&id=1UJ8MNsBgexdGNdDwQS-mK46NdmjGTs61"
 df = pd.read_csv(url)
 
 # Preprocessing
