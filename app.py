@@ -97,7 +97,7 @@ fig.show()
 # Streamlit UI
 st.title("Country Clusters on Sustainable Energy & Efficiency")
 st.write("### Sample of clustered data")
-st.dataframe(df[["Country name", "Cluster"]].head(10))
+st.dataframe(df_pivot_filled[["Country name", "Cluster"]].head(10))
 
 # Plot
 fig, ax = plt.subplots(figsize=(10,6))
