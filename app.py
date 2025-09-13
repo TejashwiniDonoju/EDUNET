@@ -101,7 +101,7 @@ st.dataframe(df_pivot_filled[["Country name", "Cluster"]].head(10))
 
 # Plot
 fig, ax = plt.subplots(figsize=(10,6))
-scatter = ax.scatter(X_pca[:,0], X_pca[:,1], c=df["Cluster"], cmap="viridis", alpha=0.7)
+scatter = ax.scatter(X_pca[:,0], X_pca[:,1], c=df_pivot_filled["Cluster"], cmap="viridis", alpha=0.7)
 plt.colorbar(scatter, label="Cluster")
 ax.set_xlabel("PCA 1")
 ax.set_ylabel("PCA 2")
